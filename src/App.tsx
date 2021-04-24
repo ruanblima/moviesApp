@@ -1,6 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import 'react-native-gesture-handler';
+import { ThemeProvider } from 'styled-components';
+import { NavigationContainer } from '@react-navigation/native';
 
-const App: React.FC = () => <View />;
+import Routes from './routes';
+import themes from './themes/index';
+
+const App: React.FC = () => (
+  <>
+    <NavigationContainer>
+      <ThemeProvider theme={themes.light}>
+        <Routes />
+      </ThemeProvider>
+    </NavigationContainer>
+  </>
+);
 
 export default App;
